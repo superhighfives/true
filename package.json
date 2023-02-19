@@ -1,0 +1,15 @@
+{
+  "name": "true",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/superhighfives/true.git"
+  },
+  "scripts": {
+    "start": "npx serve public",
+    "deploy": "npx wrangler pages publish public --project-name true"
+  },
+  "license": "MIT",
+  "homepage": "https://true.wearebrightly.com"
+}

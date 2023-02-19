@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>True - A Brightly Music Video</title>
+  <meta name=description content="The first single from the album Oh, Infinity, from Melbourne-based electronic folk band Brightly.">
+  <meta name=viewport content="width=device-width,initial-scale=1.0,user-scalable=no">
+
+  <!-- Facebook tags -->
+  <meta property="fb:admins" content="500678127">
+  <meta property="og:site_name" content="True - A Brightly Music Video">
+  <meta property="og:title" content="True - A Brightly Music Video">
+  <meta property="og:description" content="The first single from the album Oh, Infinity, from Melbourne-based electronic folk band Brightly.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://true.wearebrightly.com/">
+  <meta property="og:image" content="https://true.wearebrightly.com/apple-touch-icon.png">
+
+  <style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+      display: none !important;
+    }
+  </style>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="scripts/modernizr.js"></script>
+</head>
+<body ng-app="true" ng-controller="MainCtrl" ng-class="{unsupported: unsupported(), iphone: isiPhone(), webaudio: webaudio()}">
+
+  <div class="true-video-wrapper">
+    <video class="true-video" true-video="" preload="" ng-show="playing" ng-class="{playing: playing}" playsinline>
+      <source src="media/video/true.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
+      <source src="media/video/true.webm" type="video/webm; codecs=vp8,vorbis">
+      <source src="media/video/true.ogv" type="video/ogg; codecs=theora,vorbis">
+    </video>
+  </div>
+
+  <canvas ng-show="playing && supported" ng-class="{playing: playing, ended: ended}" class="true-visualisation" true-visualisation="" width="100%" height="100%"></canvas>
+
+  <div class="wrapper" id="page-wrap" ng-class="{ready: ready, playing: playing, ended: ended}">
+    
+    <div class="stage stage-start" ng-hide="ended">
+
+      <div class="curtain">
+				<img src="images/background-stars.jpg" crossorigin="" data-sampler="simplePlaneTexture" />
+			</div>
+
+      <div class="stage-start-background" id="canvas"></div>
+      <div class="table-display">
+        <div class="cell-display cell-vertical-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="stage-wrapper">
+                  <h1 class="stage-start-logo"><a href="/">Brightly</a></h1>
+                  <div class="svg stage-start-svg" ng-include="'images/svg/logo-true.svg'" svg-draw-in=""></div>
+                  <a href="" ng-click="start()" class="loader" ng-class="{ready: ready, loading: dataLoading, loaded: dataLoaded}">{{ status }}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="stage stage-playing" ng-show="playing">
+      <div class="table-display">
+        <div class="cell-display cell-vertical-bottom">
+          <div class="stage-wrapper">
+            <span class="lyric ng-cloak" ng-controller="LyricController" ng-class="{visible: lyric.visible}" ng-show="lyric.visible" ng-repeat="lyric in data" lyric="">
+              {{ lyric.word }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage stage-unsupported">
+      <div class="table-display">
+        <div class="cell-display cell-vertical-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+                <div class="stage-wrapper">
+                  <div class="heading heading-underlined">
+                    <h1 class="heading-title">Brightly</h1>
+                    <h2 class="heading-subtitle">True</h2>
+                  </div>
+                  <p>It looks like your browser or mobile device doesn't support the features required to view <em>True</em>.</p>
+                  <ul class="list list-links">
+                    <li><a class="button button-wide" href="https://soundcloud.com/wearebrightly/true"><span class="social-icon">&#xF6B3;</span> Listen on Soundcloud</a></li>
+                    <li><a class="button button-wide" href="https://youtu.be/La-gqpfnOKY"><span class="social-icon">&#xF630;</span> Watch on Youtube</a></li>
+                    <li><a class="button button-wide" href="https://chrome.google.com/"><span class="icon">&#xEA00;</span> Get a fancy browser</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage stage-end">
+      <div class="table-display">
+        <div class="cell-display cell-vertical-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+                <div class="stage-wrapper">
+                  <div class="heading heading-underlined">
+                    <h1 class="heading-title">Brightly</h1>
+                    <h2 class="heading-subtitle">True</h2>
+                  </div>
+                  <p><strong>Thank you for listening.</strong> <em>True</em> is taken from our record, <strong>Oh, Infinity</strong> which you can <a class="link" href="https://music.wearebrightly.com/album/oh-infinity">listen to</a> here.
+                  <ul class="list list-links">
+                    <li><a class="button button-simple" href="https://music.wearebrightly.com/track/true"><span class="icon">&#x266B;</span> <span class="underline">Buy on Bandcamp</span></a></li>
+                    <li><a class="button button-simple" href="https://soundcloud.com/wearebrightly/true"><span class="social-icon">&#xF6B3;</span> <span class="underline">Listen on Soundcloud</span></a></li>
+                    <li><a class="button button-simple" href="https://twitter.com/wearebrightly"><span class="social-icon">&#xF611;</span> <span class="underline">Follow us on Twitter</span></a></li>
+                    <li><a class="button button-simple" href="https://facebook.com/wearebrightly"><span class="social-icon">&#xF610;</span> <span class="underline">Like us on Facebook</span></a></li>
+                  </ul>
+                  <div class="button-group">
+                     <a class="button" href="#" ng-click="replay()"><span class="icon">&#x21BA;</span>Replay True</a>
+                  </div>
+                </p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer hidden-xs">
+      <div class="footer-wrapper">
+        <a class="buy-link" href="https://music.wearebrightly.com/track/true">
+          <h1 class="buy-link-title">Brightly <em>True</em></h1>
+          <h2 class="buy-link-subtitle"><span class="icon">&#x266B;</span> Get the song</h2>
+        </a>
+      </div>
+    </div>
+
+    <div class="audio-progress" ng-style="{'width': progress + '%'}"></div>
+
+  </div>
+
+  <script src="scripts/vendor.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/curtains.js"></script>
+  <script src="scripts/animation.js"></script>
+</body>

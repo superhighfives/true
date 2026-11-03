@@ -11,5 +11,5 @@
     "deploy": "npx wrangler pages publish public --project-name true"
   },
   "license": "MIT",
-  "homepage": "https://true.wearebrightly.com"
+  "homepage": "https://true.wewerebrightly.com"
 }

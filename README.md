@@ -2,17 +2,19 @@
 
 # True
 
-The microsite for the music video "True", by Brightly.
+The microsite for the music video "True", by my band Brightly. It's an immersive lyric video.
 
-> 🚨 **Note:** It's been a long time since this project was built, and the underlying technologies have changed. A lot. With the goal of keeping the spirit of this project alive, I've created a modern version, mostly by patching and noodling my way through already minified code. As a result, [True](https://true.wearebrightly.com/) works on modern devices, like mobile, but this repo only hosts that Frankenstein's monster and not the underlying code. [You can find the original repo here](https://github.com/superhighfives/true-archive).
+Status: archived. Made in 2014, not maintained. This is the static version that's deployed today, which I patched and noodled into working on modern devices, mobile included, by editing the already minified code. It's a Frankenstein's monster, so it doesn't include the underlying source. The original code lives in [superhighfives/true-archive](https://github.com/superhighfives/true-archive).
+
+Live: https://true.wewerebrightly.com/
 
 ## Getting started
 
-````
+```shell
 npm install
 npm run start
 npm run deploy
-````
+```
 
 ## Deployment
 
